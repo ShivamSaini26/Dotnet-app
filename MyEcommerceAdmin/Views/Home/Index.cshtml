@@ -1,0 +1,301 @@
+﻿
+@{
+    ViewBag.Title = "IsDB-BISEW MVC Project";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+
+<style>
+    .aa-browse-btn {
+        display: inline-block;
+        font-size: 16px;
+        padding: 12px 18px;
+        color: #a94442;
+    }
+    #main-banner img{
+        width:100%;
+        margin:auto;
+        box-shadow: 4px 4px 6px gray;
+    }
+</style>
+
+<!-- Start slider -->
+<section id="aa-slider">
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+
+                <img src="~/Content/images/hero-banner.png" alt="Los Angeles">
+
+            </div>
+
+            <div class="item img-fluid d-block w-100">
+                <img src="~/Content/images/hero-banner2.png" alt="Chicago">
+            </div>
+
+            <div class="item img-fluid d-block w-100">
+                <img src="~/Content/images/hero-banner3.png" alt="New York">
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<!-- / slider -->
+<!-- Start Promo section -->
+<section id="aa-promo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-promo-area">
+                    <div class="row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Promo section -->
+<!-- Products section -->
+<section id="aa-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="aa-product-area">
+                        <div class="aa-product-inner">
+                            <!-- start prduct navigation -->
+                            <ul class="nav nav-tabs aa-products-tab">
+                                <li class="active"><a href="#men" data-toggle="tab">Men</a></li>
+                                <li><a href="#women" data-toggle="tab">Women</a></li>
+                                <li><a href="#accessories" data-toggle="tab">Accessories</a></li>
+                                <li><a href="#electronics" data-toggle="tab">Electronic</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <!-- Start men product category -->
+                                <div class="tab-pane fade in active" id="men">
+                                    <ul class="aa-product-catg">
+                                        <!-- start single product item -->
+                                        @foreach (var item in (List<MyEcommerceAdmin.Models.Product>)@ViewBag.MenProduct)
+                                        {
+                                            { Html.RenderPartial("_Product", item); }
+                                        }
+                                        <!-- end start single product item -->
+
+                                    </ul>
+                                    <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+                                </div>
+
+                                <!-- start women product category -->
+                                <div class="tab-pane fade" id="women">
+                                    <ul class="aa-product-catg">
+                                        <!-- start single product item -->
+                                        @foreach (var item in (List<MyEcommerceAdmin.Models.Product>)@ViewBag.WomenProduct)
+                                        {
+                                            { Html.RenderPartial("_Product", item); }
+                                        }
+                                        <!-- end start single product item -->
+
+                                    </ul>
+                                    <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+                                </div>
+
+                                <!-- start Accessories product category -->
+                                <div class="tab-pane fade" id="accessories">
+                                    <ul class="aa-product-catg">
+                                        <!-- start single product item -->
+                                        @foreach (var item in (List<MyEcommerceAdmin.Models.Product>)@ViewBag.AccessoriesProduct)
+                                        {
+                                            { Html.RenderPartial("_Product", item); }
+                                        }
+                                        <!-- end start single product item -->
+
+                                    </ul>
+                                    <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+
+                                </div>
+
+                                <!-- start electronic product category -->
+                                <div class="tab-pane fade" id="electronics">
+                                    <ul class="aa-product-catg">
+                                        <!-- start single product item -->
+                                        @foreach (var item in (List<MyEcommerceAdmin.Models.Product>)@ViewBag.ElectronicsProduct)
+                                        {
+                                            { Html.RenderPartial("_Product", item); }
+                                        }
+                                        <!-- end start single product item -->
+
+                                    </ul>
+                                    <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+
+                                </div>
+                                <!-- / electronic product category -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Products section -->
+<!-- banner section -->
+
+    <div class="aa-banner-area" id="main-banner">
+        <a href="#"><img class="d-block m-auto w-" src="~/Content/images/sport-sneakers-shoes-sale-social-media-facebook-web-banner-template_70055-1167.png" alt="fashion banner img"></a>
+    </div>
+<!-- popular section -->
+<section id="aa-popular-category">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="aa-popular-category-area">
+                        <!-- start prduct navigation -->
+                        <ul class="nav nav-tabs aa-products-tab">
+                            <li class="active"><a href="#popular" data-toggle="tab">Popular</a></li>
+                            <li><a href="#featured" data-toggle="tab">Featured</a></li>
+                            <li><a href="#latest" data-toggle="tab">Latest</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <!-- Start men popular category -->
+                            <div class="tab-pane fade in active" id="popular">
+                                <ul class="aa-product-catg aa-popular-slider">
+                                    <!-- start single product item -->
+                                    @foreach (var item in (List<MyEcommerceAdmin.Models.Product>)@ViewBag.MenProduct)
+                                    {
+                                        { Html.RenderPartial("_Product", item); }
+                                    }
+                                    <!-- end start single product item -->
+
+                                </ul>
+                                <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+                            </div>
+                            <!-- / popular product category -->
+                            <!-- start featured product category -->
+                            <div class="tab-pane fade" id="featured">
+                                <ul class="aa-product-catg aa-featured-slider">
+                                    <!-- start single product item -->
+                                    @foreach (var item in (List<MyEcommerceAdmin.Models.Product>)@ViewBag.AccessoriesProduct)
+                                    {
+                                        { Html.RenderPartial("_Product", item); }
+                                    }
+                                    <!-- end start single product item -->
+
+                                </ul>
+                                <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+                            </div>
+                            <!-- / featured product category -->
+                            <!-- start latest product category -->
+                            <div class="tab-pane fade" id="latest">
+                                <ul class="aa-product-catg aa-latest-slider">
+                                    <!-- start single product item -->
+                                    @foreach (var item in (List<MyEcommerceAdmin.Models.Product>)@ViewBag.ElectronicsProduct)
+                                    {
+                                        { Html.RenderPartial("_Product", item); }
+                                    }
+                                    <!-- end start single product item -->
+
+                                </ul>
+                                <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+                            </div>
+                            <!-- / latest product category -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / popular section -->
+
+<h2 class="carousel slide text-center">Customers Review</h2><br /><br />
+<!-- Carousel wrapper -->
+<div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+    <!-- Controls -->
+     
+    <!-- Inner -->
+    <div class="carousel-inner py-4">
+        <!-- Single item -->
+        <div class="carousel-item active">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="rounded-circle shadow-1-strong mb-4"
+                             src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="avatar"
+                             style="width: 150px; border-radius: 50%; border: 4px solid grey" />
+                        <h5 class="mb-3">Anna Deynah</h5>
+                        <p>UX Designer</p>
+                        <p class="text-muted">
+                            <i class="fas fa-quote-left pe-2"></i>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id
+                            officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+                        </p>
+                        
+                    </div>
+
+                    <div class="col-lg-4 d-none d-lg-block">
+                        <img class="rounded-circle shadow-1-strong mb-4"
+                             src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
+                             style="width: 150px; border-radius: 50%; border: 4px solid gray " />
+                        <h5 class="mb-3">John Doe</h5>
+                        <p>Web Developer</p>
+                        <p class="text-muted">
+                            <i class="fas fa-quote-left pe-2"></i>
+                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                            suscipit laboriosam, nisi ut aliquid commodi.
+                        </p>
+                       
+                    </div>
+
+                    <div class="col-lg-4 d-none d-lg-block">
+                        <img class="rounded-circle shadow-1-strong mb-4"
+                             src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar"
+                             style="width: 150px; border-radius: 50%; border:4px solid grey" />
+                        <h5 class="mb-3">Maria Kate</h5>
+                        <p>Photographer</p>
+                        <p class="text-muted">
+                            <i class="fas fa-quote-left pe-2"></i>
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                            praesentium voluptatum deleniti atque corrupti.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <!-- Inner -->
+</div>
+<!-- Carousel wrapper -->
+
+
+
+<style>
+
+    .carousel-control.right, .carousel-control.left {
+        color: #f4511e;
+    }
+
+    .carousel-indicators li {
+        background-color: aqua;
+    }
+</style>
